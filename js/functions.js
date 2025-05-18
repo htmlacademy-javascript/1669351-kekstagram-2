@@ -1,20 +1,16 @@
-function isEqualToLength (string, maxSymbols) {
-  return string.length <= maxSymbols;
-}
+const isEqualToLength = (string, maxSymbols) => string.length <= maxSymbols;
 
 isEqualToLength();
 
 const isPolyndrom = (string) => {
-  const normalizedString = string;
-  normalizedString.replaceAll(' ', '');
-  normalizedString.toLowerCase();
+  const normalizedString = string.replaceAll(' ', '').toLowerCase();
   let reversedString = '';
 
   for (let i = normalizedString.length - 1; i >= 0; i--){
     reversedString += normalizedString[i];
   }
 
-  return string === reversedString;
+  return normalizedString === reversedString;
 };
 
 isPolyndrom();
