@@ -1,19 +1,20 @@
-function getLengthCheck (string, maxSymbols) {
-  return (string.length <= maxSymbols) ? 'true' : 'false';
+function isEqualToLength (string, maxSymbols) {
+  return string.length <= maxSymbols;
 }
 
-getLengthCheck();
+isEqualToLength();
 
-function getPolyndromeCheck (string) {
-  string = string.replaceAll(' ', '');
-  string = string.toLowerCase();
-  let reversed = '';
+const isPolyndrom = (string) => {
+  const normalizedString = string;
+  normalizedString.replaceAll(' ', '');
+  normalizedString.toLowerCase();
+  let reversedString = '';
 
-  for (let i = string.length - 1; i >= 0; i--){
-    reversed += string[i];
+  for (let i = normalizedString.length - 1; i >= 0; i--){
+    reversedString += normalizedString[i];
   }
 
-  return string === reversed ? 'ура полиндром' : 'нет, не полиндром';
-}
+  return string === reversedString;
+};
 
-getPolyndromeCheck();
+isPolyndrom();
